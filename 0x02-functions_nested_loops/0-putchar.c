@@ -4,7 +4,8 @@
  * main -Entry point of my code, followed by a new line.
  *
  * Return: Always 0
- */
+*/ 
+
 int main(void)
 {
 	_putchar('_');
