@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * main -Entry point of my code, followed by a new line.
+ * main - Entry point of my code, followed by a new line.
  *
  * Return: Always 0
 */ 
