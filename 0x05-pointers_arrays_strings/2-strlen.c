@@ -6,7 +6,7 @@
  *
  * @s: arg s
  *
- * Return: String length
+ * Return: Always 0
  */
 
 int _strlen(char *s)
