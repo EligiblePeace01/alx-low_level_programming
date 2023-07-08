@@ -5,7 +5,7 @@
  * @s: pointer to string.
  *
  * Return: integer gotten.
- */ 
+ */
 
 int _atoi(char *s)
 {
