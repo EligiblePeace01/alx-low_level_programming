@@ -2,19 +2,24 @@
 #include "main.h"
 
 /**
- * main - print product of argument numbers
- * @argc: argument counter
- * @argv: numbers to multiply
- * Return: 0 on success, 1 if two arguments not given
- */
+ * main - program that multiplies two numbers.
+ * @argc: number of arguments
+ * @argv: array with the arguments
+ *
+ * Return: always 0
+ **/
 
 int main(int argc, char *argv[])
 {
-if (argc != 3)
-{
-printf("Error\n");
-return (1);
-}
-printf("%d\n", atoi(argv[1]) * atoi(argv[2]));
-return (0);
+	int mult = 0;
+	char c[] = "Error";
+
+	if (argc != 3)
+	{
+		printf("%s\n", c);
+		return (1);
+	}
+	mult = atoi(argv[1]) * atoi(argv[2]);
+	printf("%i\n", mult);
+	return (0);
 }
