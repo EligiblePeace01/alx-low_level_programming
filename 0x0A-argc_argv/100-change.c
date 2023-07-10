@@ -9,6 +9,7 @@
  * @i: Passed in variable from main for calculations
  * Return: The number ofminimum coins needed for the passed in variable
  */
+
 int coinConverter(int i)
 {
 	int count = 0;
@@ -45,6 +46,7 @@ int coinConverter(int i)
  * @argv: Array name
  * Return: 0 if exactly 1 argument is passed into this program, 1 otherwise
  */
+
 int main(int argc, char *argv[])
 {
 	int i, coin;
