@@ -1,76 +1,51 @@
-#include "holberton.h"
+#include "main.h"
+#include <stdio.h>
 #include <stdlib.h>
 
 /**
- * wrdcnt - counts the number of words in a string
- * @s: string to count
- *
- * Return: int of number of words
+ *strtow- a program that that splits a string into words
+ *@str: string
+ *Return: pointer to an array of strings (word)
  */
-int wrdcnt(char *s)
-{
-	int i, n = 0;
 
-	for (i = 0; s[i]; i++)
-	{
-		if (s[i] == ' ')
-		{
-			if (s[i + 1] != ' ' && s[i + 1] != '\0')
-				n++;
-		}
-		else if (i == 0)
-			n++;
-	}
-	n++;
-	return (n);
-}
-
-/**
- * strtow - splits a string into words
- * @str: string to split
- *
- * Return: pointer to an array of strings
- */
 char **strtow(char *str)
 {
-	int i, j, k, l, n = 0, wc = 0;
-	char **w;
+	int a, b, c = 0, i, j, user = 0, dump;
+	char **word;
 
-	if (str == NULL || *str == '\0')
+	if (str == NULL || str[0] == '\0')
 		return (NULL);
-	n = wrdcnt(str);
-	if (n == 1)
+	for (a = 0; str[a] != '\0'; a++)
+		if (str[a] != ' ' && (str[a + 1] == ' ' || str[a + 1] == '\0'))
+			user++;
+	if (user == 0)
 		return (NULL);
-	w = (char **)malloc(n * sizeof(char *));
-	if (w == NULL)
-		return (NULL);
-	w[n - 1] = NULL;
-	i = 0;
-	while (str[i])
+	word = malloc((user + 1) * sizeof(char *));
+	if (word == NULL)
 	{
-		if (str[i] != ' ' && (i == 0 || str[i - 1] == ' '))
+		free(word);
+		return (NULL);
+	}
+	for (a = 0; str[a] != '\0' && c < user; a++)
+	{
+		if (str[a] != ' ')
 		{
-			for (j = 1; str[i + j] != ' ' && str[i + j]; j++)
-				;
-			j++;
-			w[wc] = (char *)malloc(j * sizeof(char));
-			j--;
-			if (w[wc] == NULL)
+			dump = 0;
+			for (b = a; str[b] != ' ' && str[b] != '\0'; b++)
+				dump++;
+			word[c] = malloc((dump + 1) * sizeof(char));
+			if (word[c] == NULL)
 			{
-				for (k = 0; k < wc; k++)
-					free(w[k]);
-				free(w[n - 1]);
-				free(w);
+				for (j = 0; j < c; j++)
+					free(word[c]);
+				free(word);
 				return (NULL);
 			}
-			for (l = 0; l < j; l++)
-				w[wc][l] = str[i + l];
-			w[wc][l] = '\0';
-			wc++;
-			i += j;
+			for (i = 0; i < dump; i++, a++)
+				word[c][i] = str[a];
+			word[c][i] = '\0', c++;
 		}
-		else
-			i++;
 	}
-	return (w);
+	word[c] = NULL;
+	return (word);
 }
