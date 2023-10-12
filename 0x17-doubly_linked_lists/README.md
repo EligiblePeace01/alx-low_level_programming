@@ -18,7 +18,7 @@ Operations of Doubly Linked List with Implementation:
 3. Insertion of a node: This can be done in three ways: 
 * At the beginning: The new created node is insert in before the head node and head points to the new node.
 * At the end: The new created node is insert at the end of the list and tail points to the new node.
-* At a given position: Traverse the given DLL to that position(let the node be X) then do the following: 
+* At a given position: Traverse the given DLL to that position(let the node be X) then do the following:
 1. Change the next pointer of new Node to the next pointer of Node X.
 2. Change the prev pointer of next Node of Node X to the new Node.
 3. Change the next pointer of node X to new Node.
@@ -26,10 +26,10 @@ Operations of Doubly Linked List with Implementation:
 
 
 
-Deletion of a node: This can be done in three ways: 
+Deletion of a node: This can be done in three ways:
 
-* At the beginning: Move head to the next node to delete the node at the beginning and make previous pointer of current head to NULL .
+* At the beginning: Move head to the next node to delete the node at the beginning and make previous pointer of current head to NULL.
 * At the last: Move tail to the previous node to delete the node at the end and make next pointer of tail node to NULL.
-* At a given position: Let the prev node of Node at position pos be Node X and next node be Node Y, then do the following: 
+* At a given position: Let the prev node of Node at position pos be Node X and next node be Node Y, then do the following:
 1. Change the next pointer of Node X to Node Y.
 2. Change the previous pointer of Node Y to Node X.
